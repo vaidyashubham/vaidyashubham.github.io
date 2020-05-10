@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+#bg-img-container {
+  height: 100vh;
+  background-image: url(./images/des2-1.png);
+  background-position: center;
+  background-size: cover;
+  overflow-x: hidden;
+  position: relative;
+}
+
+#nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-brand {
+  font-weight: 500;
+  font-size: 25px !important;
+  height: 40px;
+  padding-left: 20px;
+}
+
+.navbar-nav li {
+  padding: 0 10px;
+}
+
+.navbar-nav li a {
+  font-weight: 600;
+  float: right;
+  text-align: left;
+  color: black !important;
+}
+
+.fa-bars {
+  font-size: 30px !important;
+}
+
+.navbar-toggler {
+  outline: none !important;
+}
+
+/* Banner Section */
+#banner {
+  padding-top: 5%;
+}
+
+/* .promo-title {
+  font-weight: 600;
+} */
+
+.promo-title-responsive {
+  display: none;
+}
+
+/* How it works */
+.how-it-works-img {
+  width: 200px !important;
+  height: 180px !important;
+}
+
+.know-more {
+  color: purple;
+  font-weight: bold;
+}
+
+/* Client section */
+.client-img {
+  width: 200px;
+  height: auto;
+}
+
+.client-section {
+  background-image: linear-gradient(to right, #a97cfe, #be7bf7);
+}
+
+/* Our CLients */
+
+.clients img {
+  width: 100px;
+  height: auto;
+}
+
+.clients {
+  background-image: linear-gradient(to right, #a97cfe, #be7bf7);
+}
+
+/* Footer */
+
+
+/* Social Media */
+#social-media {
+  background: #f8f9fa;
+  padding: 20px 0;
+}
+
+#social-media p {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.social-icons a i {
+  transition: 0.5s;
+}
+
+.social-icons a:hover i {
+  transform: translateY(-10px);
+}
+
+.social-icons i.fa.fa-facebook-square {
+  color: #3b5999;
+}
+
+.social-icons i.fa.fa-linkedin-square {
+  color: #0077B5;
+}
+
+.social-icons i.fa.fa-google-plus-square {
+  color: #dd4b39;
+}
+
+.social-icons i.fa.fa-youtube-square {
+  color: #cd201f;
+}
+
+.social-icons i.fa.fa-twitter-square {
+  color: #55acee;
+}
+
+@media (max-width: 700px) {
+  #bg-img-container {
+    height: 50vh;
+    background-image: url(./images/32112.png);
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .navbar-brand {
+    font-weight: 400;
+    font-size: 15px !important;
+    height: 40px;
+    padding-left: 20px;
+  }
+
+  .promo-title {
+    display: none;
+  }
+
+  .tagline {
+    padding-top: 150px !important;
+    text-align: center;
+  }
+
+  .promo-title-responsive {
+    /* font-weight: 400; */
+    margin-top: 40px;
+  }
+
+}
