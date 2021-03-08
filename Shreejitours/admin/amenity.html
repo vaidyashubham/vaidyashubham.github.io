@@ -1,0 +1,923 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <title>Shreeji Tours And Travels</title>
+
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="_token" content="VEFS745rOib7kTeQd7v5Byosu3Ht7Ko2BMSvZSOI" />
+  <meta name="csrf-token" content="VEFS745rOib7kTeQd7v5Byosu3Ht7Ko2BMSvZSOI">
+
+  <!-- Bootstrap core CSS     -->
+  <link href="/admin-dashboard/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/admin-dashboard/css/bootstrap-toggle.min.css" rel="stylesheet" />
+
+  <!-- Animation library for notifications   -->
+  <link href="/admin-dashboard/css/animate.min.css" rel="stylesheet" />
+  <link href="/admin-dashboard/css/daterangepicker.css" rel="stylesheet" />
+
+  <!--  Light Bootstrap Table core CSS    -->
+  <link href="/admin-dashboard/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+
+
+  <!--  CSS for Demo Purpose, don't include it in your project     -->
+  <link href="/admin-dashboard/css/demo.css" rel="stylesheet" />
+
+
+  <!--     Fonts and icons     -->
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+  <link href="/admin-dashboard/css/pe-icon-7-stroke.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <div class="sidebar" data-color="purple" data-image="/admin-dashboard/img/sidebar-5.jpg">
+
+      <!--
+
+    Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+    Tip 2: you can also add an image using data-image tag
+
+-->
+
+      <div class="sidebar-wrapper">
+        <div class="logo">
+          <a href="./dashboard.html" class="simple-text">
+            Shreeji Tours & Travels
+          </a>
+        </div>
+
+        <ul class="nav">
+          <li>
+            <a href="./dashboard.html">
+              <i class="fa fa-dashboard"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li>
+            <a href="./package.html">
+              <i class="fas fa-clipboard-list"></i>
+              <p>Packages</p>
+            </a>
+          </li>
+
+
+          <li>
+            <a href="./amenity.html">
+              <i class="fa fa-hotel"></i>
+              <p>Amenity</p>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+    <div class="main-panel">
+      <nav class="navbar navbar-default navbar-fixed">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+              <i class="fas fa-angle-right"></i> Amenities</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <!-- <ul class="nav navbar-nav navbar-left">
+              <li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-dashboard"></i>
+                  <p class="hidden-lg hidden-md">Dashboard</p>
+                </a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-globe"></i>
+                  <b class="caret hidden-lg hidden-md"></b>
+                  <p class="hidden-lg hidden-md">
+                    5 Notifications
+                    <b class="caret"></b>
+                  </p>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Notification 1</a></li>
+                  <li><a href="#">Notification 2</a></li>
+                  <li><a href="#">Notification 3</a></li>
+                  <li><a href="#">Notification 4</a></li>
+                  <li><a href="#">Another notification</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="">
+                  <i class="fa fa-search"></i>
+                  <p class="hidden-lg hidden-md">Search</p>
+                </a>
+              </li>
+            </ul> -->
+
+            <ul class="nav navbar-nav navbar-right">
+
+              <li style="float: right">
+                <a href="http://shreejitours.co.in/logout" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                  Logout
+
+                </a>
+                <form id="logout-form" action="http://shreejitours.co.in/logout" method="POST" style="display: none;">
+                  <input type="hidden" name="_token" value="VEFS745rOib7kTeQd7v5Byosu3Ht7Ko2BMSvZSOI">
+                </form>
+              </li>
+              <li class="separator hidden-lg"></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="addNewBtn">
+                <button type="button" name="button" class="btn btn-primary btn-fill" data-toggle="modal"
+                  data-target="#addModal"> Add New Amenity</button>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="card card-plain">
+                <div class="header">
+                  <h4 class="title">List Of Amenity</h4>
+                  <p class="category">Here is a list of all the amenities you have added.</p>
+                </div>
+                <div class="content card table-responsive table-full-width" style="margin-top: 20px">
+                  <table class="table table-hover">
+                    <thead>
+                      <th>Sr.No</th>
+                      <th>Title</th>
+                      <th>Description</th>
+
+                      <th>Status</th>
+                      <th>Action</th>
+                    </thead>
+                    <tbody>
+
+                      <tr>
+                        <td>1</td>
+                        <td>
+                          Air Ticket
+                        </td>
+                        <td>
+
+                        </td>
+
+                        <td>
+                          <div class="checkbox">
+                            <input type="checkbox" class="published" id="published1" data-id="1" data-status="1"
+                              checked>
+                            <label for="published1"> <i class=""></i> </label>
+                          </div>
+                        </td>
+                        <td>
+                          <button type="button" name="button" class="btn btn-danger btn-fill del_Btn"
+                            data-toggle="modal" data-target="#deleteModal" data-id="1"> <i class="fa fa-times"></i>
+                          </button>
+                          <button type="button" name="button" class="btn btn-warning btn-fill edit_Btn"
+                            data-toggle="modal" data-target="#editModal" data-id="1" data-title="Air Ticket"
+                            data-desc=""> <i class="fa fa-pencil"></i> </button>
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>
+                          Food
+                        </td>
+                        <td>
+
+                        </td>
+
+                        <td>
+                          <div class="checkbox">
+                            <input type="checkbox" class="published" id="published2" data-id="2" data-status="1"
+                              checked>
+                            <label for="published2"> <i class=""></i> </label>
+                          </div>
+                        </td>
+                        <td>
+                          <button type="button" name="button" class="btn btn-danger btn-fill del_Btn"
+                            data-toggle="modal" data-target="#deleteModal" data-id="2"> <i class="fa fa-times"></i>
+                          </button>
+                          <button type="button" name="button" class="btn btn-warning btn-fill edit_Btn"
+                            data-toggle="modal" data-target="#editModal" data-id="2" data-title="Food" data-desc=""> <i
+                              class="fa fa-pencil"></i> </button>
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>
+                          Visa
+                        </td>
+                        <td>
+
+                        </td>
+
+                        <td>
+                          <div class="checkbox">
+                            <input type="checkbox" class="published" id="published3" data-id="3" data-status="1"
+                              checked>
+                            <label for="published3"> <i class=""></i> </label>
+                          </div>
+                        </td>
+                        <td>
+                          <button type="button" name="button" class="btn btn-danger btn-fill del_Btn"
+                            data-toggle="modal" data-target="#deleteModal" data-id="3"> <i class="fa fa-times"></i>
+                          </button>
+                          <button type="button" name="button" class="btn btn-warning btn-fill edit_Btn"
+                            data-toggle="modal" data-target="#editModal" data-id="3" data-title="Visa" data-desc=""> <i
+                              class="fa fa-pencil"></i> </button>
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>
+                          Transfer
+                        </td>
+                        <td>
+
+                        </td>
+
+                        <td>
+                          <div class="checkbox">
+                            <input type="checkbox" class="published" id="published4" data-id="4" data-status="1"
+                              checked>
+                            <label for="published4"> <i class=""></i> </label>
+                          </div>
+                        </td>
+                        <td>
+                          <button type="button" name="button" class="btn btn-danger btn-fill del_Btn"
+                            data-toggle="modal" data-target="#deleteModal" data-id="4"> <i class="fa fa-times"></i>
+                          </button>
+                          <button type="button" name="button" class="btn btn-warning btn-fill edit_Btn"
+                            data-toggle="modal" data-target="#editModal" data-id="4" data-title="Transfer" data-desc="">
+                            <i class="fa fa-pencil"></i> </button>
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>
+                          Sightseeing
+                        </td>
+                        <td>
+
+                        </td>
+
+                        <td>
+                          <div class="checkbox">
+                            <input type="checkbox" class="published" id="published5" data-id="5" data-status="1"
+                              checked>
+                            <label for="published5"> <i class=""></i> </label>
+                          </div>
+                        </td>
+                        <td>
+                          <button type="button" name="button" class="btn btn-danger btn-fill del_Btn"
+                            data-toggle="modal" data-target="#deleteModal" data-id="5"> <i class="fa fa-times"></i>
+                          </button>
+                          <button type="button" name="button" class="btn btn-warning btn-fill edit_Btn"
+                            data-toggle="modal" data-target="#editModal" data-id="5" data-title="Sightseeing"
+                            data-desc=""> <i class="fa fa-pencil"></i> </button>
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>
+                          Hotel
+                        </td>
+                        <td>
+
+                        </td>
+
+                        <td>
+                          <div class="checkbox">
+                            <input type="checkbox" class="published" id="published6" data-id="6" data-status="1"
+                              checked>
+                            <label for="published6"> <i class=""></i> </label>
+                          </div>
+                        </td>
+                        <td>
+                          <button type="button" name="button" class="btn btn-danger btn-fill del_Btn"
+                            data-toggle="modal" data-target="#deleteModal" data-id="6"> <i class="fa fa-times"></i>
+                          </button>
+                          <button type="button" name="button" class="btn btn-warning btn-fill edit_Btn"
+                            data-toggle="modal" data-target="#editModal" data-id="6" data-title="Hotel" data-desc=""> <i
+                              class="fa fa-pencil"></i> </button>
+
+                        </td>
+                      </tr>
+
+
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="container-fluid">
+          <nav class="pull-left">
+            <ul>
+              <li>
+                <a href="/">
+                  Check The Site
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <p class="copyright pull-right">
+            &copy;
+            <script>
+              document.write(new Date().getFullYear())
+            </script> Adventure & Nature Club Camp. Powered by <a href="http://www.thespaceelement.com">The Space
+              Element</a>
+          </p>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+
+
+  <!-- album -->
+  <!--add new album modal -->
+  <div id="addAlbumModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" style="z-index: 99999">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add New Album</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <div class="form-group">
+                <label>Title</label>
+                <input type="text" class="form-control" placeholder="Title" value="">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <div class="form-group">
+                <label for="">Description</label>
+                <textarea class="form-control" placeholder="Description"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer text-center">
+          <button type="button" name="button" class="btn btn-success btn-fill">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--edit album modal -->
+  <div id="editAlbumModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" style="z-index: 99999">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Album</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <div class="form-group">
+                <label>Title</label>
+                <input type="text" class="form-control" placeholder="Title" value="">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <div class="form-group">
+                <label for="">Description</label>
+                <textarea class="form-control" placeholder="Description">
+              </textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer text-center">
+          <button type="button" name="button" class="btn btn-success btn-fill">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--delete album modal -->
+  <div id="deleteAlbumModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" style="z-index: 99999">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Delete Slider</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="deleteText text-center">
+              <h5>Are you sure you want to delete this album?</h5>
+            </div>
+            <div class="actionBtn text-center">
+              <button type="button" class="btn btn-danger btn-fill" data-dismiss="modal">Yes</button>
+              <button type="button" class="btn btn-primary btn-fill" data-dismiss="modal">No</button>
+
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer text-center">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- album -->
+  <!--add new Image modal -->
+  <div id="addImageModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" style="z-index: 99999">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add New Image</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4 col-md-offset-2">
+              <div class="form-group">
+                <label>Add Image</label>
+                <input type="file" class="form-control" placeholder="">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Title</label>
+                <input type="text" class="form-control" placeholder="Title" value="">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <div class="form-group">
+                <label for="">Description</label>
+                <textarea class="form-control" placeholder="Description"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer text-center">
+          <button type="button" name="button" class="btn btn-success btn-fill">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--delete Image modal -->
+  <div id="deleteImageModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" style="z-index: 99999">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Delete Image</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="deleteText text-center">
+              <h5>Are you sure you want to delete this Image?</h5>
+            </div>
+            <div class="actionBtn text-center">
+              <button type="button" class="btn btn-danger btn-fill" data-dismiss="modal">Yes</button>
+              <button type="button" class="btn btn-primary btn-fill" data-dismiss="modal">No</button>
+
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer text-center">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--delete Image modal -->
+  <div id="viewImageModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" style="z-index: 99999">
+      <i class="fa fa-times closeImageModal" data-dismiss="modal"></i>
+      <div class="modalImage">
+        <img width="100%" alt="">
+      </div>
+
+    </div>
+  </div>
+</body>
+
+
+<!--   Core JS Files   -->
+<script src="/admin-dashboard/js/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="/admin-dashboard/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/admin-dashboard/js/bootstrap-toggle.min.js" type="text/javascript"></script>
+<script src="/admin-dashboard/js/moment.min.js" type="text/javascript"></script>
+<script src="/admin-dashboard/js/daterangepicker.min.js" type="text/javascript"></script>
+
+<!--  Charts Plugin -->
+<script src="/admin-dashboard/js/chartist.min.js"></script>
+
+<!--  Notifications Plugin    -->
+<script src="/admin-dashboard/js/bootstrap-notify.js"></script>
+
+<!--  Google Maps Plugin    -->
+
+
+<!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+<script src="/admin-dashboard/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
+
+<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+<script src="/admin-dashboard/js/demo.js"></script>
+
+
+<script type="text/javascript">
+  // $(document).ready(function(){
+  //
+  //   demo.initChartist();
+  //
+  //   $.notify({
+  //       icon: 'pe-7s-gift',
+  //       message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
+  //
+  //     },{
+  //         type: 'info',
+  //         timer: 4000
+  //     });
+  //
+  // });
+
+
+
+
+  $('.viewImage').click(function (event) {
+    /* Act on the event */
+    var imageSrc = $(this).parent('div').siblings('.galleryImage').attr('src');
+    console.log(imageSrc);
+    $('#viewImageModal img').attr('src', imageSrc);
+  });
+
+
+  $('input[name="daterange"]').daterangepicker({
+    locale: {
+      format: 'DD-MM-YYYY'
+    }
+  });
+  setTimeout(() => {
+    $('.alert').fadeOut();
+  }, 2000);
+</script>
+
+</html>
+
+<!--add new slider modal -->
+<div id="addModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg" style="z-index: 99999">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <form class="" id="add_albumForm" action="/admin/amenity" method="post">
+
+        <input type="hidden" name="_token" value="VEFS745rOib7kTeQd7v5Byosu3Ht7Ko2BMSvZSOI">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add New Amenity</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4  col-md-offset-2">
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" placeholder="Title" id="add_title" name="add_title" value="">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-md-offset-2">
+              <div class="form-group">
+                <label for="">Icon</label>
+                <select class="btn btn-warning" name="add_order">
+
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2">
+              <div class="form-group">
+                <label for="">Description</label>
+                <textarea class="form-control" placeholder="Description" id="add_desc" name="add_desc"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer mx-auto text-center">
+          <button type="submit" name="button" class="btn btn-success btn-fill" id="add_submitBtn">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--edit slider modal -->
+<div id="editModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg" style="z-index: 99999">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit Amenity</h4>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" class="form-control" id="edit_id" value="">
+        <div class="row">
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" class="form-control" placeholder="Title" id="edit_title" value="">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+              <label for="">Description</label>
+              <textarea class="form-control" placeholder="Description" id="edit_desc">
+                </textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer text-center">
+        <button type="button" name="button" class="btn btn-success btn-fill" id="edit_SubmitBtn">Submit</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--delete slider modal -->
+<div id="deleteModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg" style="z-index: 99999">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Delete Amenity</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="deleteText text-center">
+            <h5>Are you sure you want to delete this Amenity?</h5>
+          </div>
+          <div class="actionBtn text-center">
+            <form class="" action="index.html" method="post">
+              <button type="button" class="btn btn-danger btn-fill" id="del_SubmitBtn" data-dismiss="modal"
+                data-id="">Yes</button>
+
+            </form>
+            <button type="button" class="btn btn-primary btn-fill" data-dismiss="modal">No</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer text-center">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+
+
+
+  $(document).ready(function () {
+
+    // $(document).ajaxStop(alert("Requestcleared!"));
+
+    $.ajaxSetup({
+      header: {
+        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+      }
+    });
+
+
+    $(".del_Btn").click(function () {
+      var id = $(this).data('id');
+      console.log('clicked:' + id);
+      $('#del_SubmitBtn').attr('data-id', id);
+
+    });
+
+    // DELETE
+    $('#deleteModal').on('click', '#del_SubmitBtn', function (event) {
+      var id = $('#del_SubmitBtn').data('id');
+
+      console.log('id fetched:' + id);
+      event.preventDefault();
+
+
+      console.log('inside click:' + id);
+
+      $.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+      });
+
+      $.ajax({
+        // method:'DELETE',
+        type: 'DELETE',
+        url: '/admin/amenity/' + id,
+        // cache: false,
+        // data: {
+        //   '_token': $('meta[name="_token"]').attr('content'),
+        //   'id': id,
+        //   '_method': 'DELETE'
+        // },
+        // success: function(data) {
+        //   console.log(data);
+        //   console.log("dd");
+        //   window.location = '/admin/slider';
+        //   // loadPage('bank');
+        //
+        //   // toastr.success('Successfully deleted!', 'Success Alert', {timeOut: 8000});
+        //   // $('.item' + data['id']).remove();
+        // }
+      }).done(function (data) {
+        console.log(data);
+        console.log("deleted");
+
+        setTimeout(function () {
+
+          window.location.reload();
+        }, 1000);
+      });
+
+
+    });
+
+
+
+
+    // Status Changed
+    $('.published').on('change', function (event) {
+      var id = $(this).data('id');
+      var status = $(this).data('status');
+
+      console.log(status);
+      $.ajax({
+        url: "/admin/amenity/" + id + "/edit?status=" + status,
+        type: "GET",
+        success: function (data) {
+
+          setTimeout(function () {
+
+            window.location.reload();
+          }, 1000);
+          console.log(data);
+
+
+        }
+      });
+    });
+
+
+    // Order Changed
+    $('.order-published').on('change', function (event) {
+      var id = $(this).data('id');
+      var order = $(this).val();
+      console.log(order);
+      $.ajax({
+        url: "/admin/ablum/changeOrder/" + id + "/" + order,
+        type: "GET",
+        success: function (data) {
+
+          setTimeout(function () {
+
+            window.location.reload();
+          }, 1000);
+          console.log(data);
+
+
+        }
+      });
+    });
+
+    $('.edit_Btn').click(function () {
+
+      console.log('edit button clicked');
+      $('#edit_id').val($(this).data('id'));
+      $('#edit_title').val($(this).data('title'));
+      $('#edit_desc').val($(this).data('desc'));
+      $('#edit_order').val($(this).data('order'));
+
+    });
+
+    // Edit
+    $('#editModal').on('click', '#edit_SubmitBtn', function (event) {
+      // var id = $(this).data('id');
+      var id = $('#edit_id').val();
+      console.log('id fetched:' + id);
+      event.preventDefault();
+
+      $.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+      });
+
+      $.ajax({
+
+        type: 'PUT',
+        url: '/admin/amenity/' + id,
+        data: {
+          '_token': $('input[name=_token]').val(),
+          'id': $("#id_edit").val(),
+          'title': $('#edit_title').val(),
+          'desc': $('#edit_desc').val(),
+          'order': $('#edit_order').val(),
+
+        },
+      }).done(function (data) {
+        console.log(data);
+        console.log("Edited");
+
+        setTimeout(function () {
+
+          window.location.reload();
+        }, 1000);
+      });
+
+
+    });
+
+    setTimeout(() => {
+      $('.alert').fadeOut();
+    }, 1500);
+
+  });
+
+</script>

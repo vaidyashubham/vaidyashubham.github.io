@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="d9jz15UCliOh8WS91huzJqVL4gHkxGNzTMbsMePg">
+
+  <title>Shreeji Tours | TSE</title>
+
+  <!-- Scripts -->
+  <script src="http://shreejitours.co.in/js/app.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
+  <!-- Styles -->
+  <link href="http://shreejitours.co.in/css/app.css" rel="stylesheet">
+
+  <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+</head>
+
+<body>
+  <div id="app">
+    <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+      <div class="container">
+        <a class="navbar-brand" href="http://shreejitours.co.in">
+          Shreeji Tours | TSE
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Left Side Of Navbar -->
+          <ul class="navbar-nav mr-auto">
+
+          </ul>
+
+          <!-- Right Side Of Navbar -->
+          <ul class="navbar-nav ml-auto">
+            <!-- Authentication Links -->
+            <li class="nav-item">
+              <a class="nav-link" href="./login.html">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./register.html">Register</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="py-4">
+      <div class="container">
+        <!-- <button class="btn btn-light text-center" id="signInWithGoogle">
+          <img src="../admin-dashboard/img/google.svg" style="width: 30px;" alt="" />
+          Sign in with Google
+        </button> -->
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header text-center font-weight-bold">Login</div>
+
+              <div class="card-body">
+
+                <!-- <input type="hidden" name="_token" value="d9jz15UCliOh8WS91huzJqVL4gHkxGNzTMbsMePg"> -->
+                <div class="form-group row">
+                  <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+
+                  <div class="col-md-6">
+                    <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+
+                  <div class="col-md-6">
+                    <input id="password" type="password" class="form-control" name="password" required>
+
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-6 offset-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="remember" id="remember">
+
+                      <label class="form-check-label" for="remember">
+                        Remember Me
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row mb-0">
+                  <div class="col-md-8 offset-md-4">
+                    <button class="btn btn-primary" id="signInWithMail">
+                      Login
+                    </button>
+
+                    <a class="btn btn-link" href="./reset.html">
+                      Forgot Your Password?
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyAsQz19X2hPji3dVZbo8Ydvom8AVwBxSRY",
+      authDomain: "shreeji-6f683.firebaseapp.com",
+      projectId: "shreeji-6f683",
+      storageBucket: "shreeji-6f683.appspot.com",
+      messagingSenderId: "155252961630",
+      appId: "1:155252961630:web:566f80547daf8cbaa8dfcf",
+      measurementId: "G-TZ240T1JZN"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    // const auth = firebase.auth();
+    const db = firebase.firestore();
+    let ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+    // Initialize Firebase
+    // firebase.initializeApp(firebaseConfig);
+
+    const auth = firebase.auth();
+
+    // const signInWithGoogleButton = document.getElementById('signInWithGoogle');
+
+    // const signInWithGoogle = () => {
+    //   const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+    //   auth.signInWithPopup(googleProvider)
+    //     .then(() => {
+    //       window.location.assign('./dashboard.html');
+    //     })
+    //     .catch(error => {
+    //       console.error(error);
+    //     })
+    // }
+
+    // signInWithGoogleButton.addEventListener('click', signInWithGoogle);
+
+    const signInWithMail = document.getElementById('signInWithMail');
+    const mailField = document.getElementById('email');
+    const passwordField = document.getElementById('password');
+
+    const signInWithEmailFunction = () => {
+      const email = mailField.value;
+      const password = passwordField.value;
+
+      //Built in firebase function responsible for authentication
+      auth.signInWithEmailAndPassword(email, password)
+        .then(() => {
+          //Signed in successfully
+          console.log("Signed in!")
+          window.location.assign('./dashboard.html')
+        })
+        .catch(error => {
+          //Something went wrong
+          console.error(error);
+        })
+    }
+
+    //Adds the click event to the signInWithMail button
+    //so it calls the signInWithEmail function whenever a user clicks on it
+    signInWithMail.addEventListener('click', signInWithEmailFunction);
+    auth.onAuthStateChanged(user => {
+      console.log(user);
+    })
+
+  </script>
+</body>
+
+</html>

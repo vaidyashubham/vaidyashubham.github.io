@@ -1,0 +1,229 @@
+@media (min-width: 992px) {
+  .typo-line {
+    padding-left: 140px;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .typo-line .category {
+    transform: translateY(-50%);
+    top: 50%;
+    left: 0px;
+    position: absolute;
+  }
+}
+
+.all-icons [class*="pe-"] {
+  font-size: 40px;
+}
+
+.all-icons input {
+  border: 0;
+}
+
+.all-icons .font-icon-detail {
+  text-align: center;
+  padding: 45px 0px 30px;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  margin: 15px 0;
+}
+
+.all-icons .font-icon-detail input {
+  margin: 25px auto 0;
+  width: 100%;
+  text-align: center;
+  display: block;
+  color: #aaa;
+  font-size: 13px;
+}
+
+#map {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 60px);
+}
+
+.places-buttons .btn {
+  margin-bottom: 30px;
+}
+
+.sidebar .nav>li.active-pro {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+}
+
+.sidebar .nav>li.active-pro a {
+  background: rgba(255, 255, 255, 0.14);
+  opacity: 1;
+  color: #ffffff;
+}
+
+.table-upgrade td:nth-child(2),
+.table-upgrade td:nth-child(3) {
+  text-align: center;
+}
+
+@media all and (max-width: 991px) {
+  .sidebar .nav>li.active-pro {
+    position: initial;
+  }
+}
+
+.albumDetail {
+  margin-bottom: 20px;
+}
+
+.modalImage {
+  padding: 30px;
+}
+
+#viewImageModal .modal-dialog {
+  margin: 0 auto;
+}
+
+#viewImageModal .modalImage {
+  text-align: center;
+}
+
+#viewImageModal img {
+  max-height: 80vh;
+  width: auto;
+  margin: 0 auto;
+}
+
+.closeImageModal {
+  font-size: 25px !important;
+  color: #fff;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  cursor: pointer;
+}
+
+.card {
+  position: relative;
+}
+
+.addPackageSection,
+.addItinerarySection {
+  padding: 20px 50px;
+}
+
+.packagesList {
+  padding: 10px 50px;
+}
+
+.packagesList .card {
+  overflow: hidden;
+}
+
+.packagesList .card img {
+  width: 120%;
+}
+
+.packageDetail {
+  margin-top: 20px;
+  padding: 10px 0;
+}
+
+.packagesList .card .packageDetail .packagePrice {
+  padding: 10px 20px;
+  color: #fff;
+  background: #e74c3c;
+}
+
+.packagesList .card .packageDetail,
+.packagesList .card .packageDetail .packageDesc {
+  padding: 10px;
+}
+
+.packagesList .card .packageDetail .packageDate {
+  position: absolute;
+  right: 10px;
+  top: 30px;
+  color: #fff;
+}
+
+.packageTitle h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.packageDesc .btn {
+  padding: 5px;
+  margin: 5px;
+}
+
+.packageDesc form {
+  display: inline-block;
+  float: right;
+}
+
+.packagesList .card .packageDetail .packageDate span {
+  padding: 23px 10px;
+  border-radius: 50%;
+  background: #e74c3c;
+}
+
+.card-wrapper .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.08) !important;
+  animation: fadeInLeft forwards 0.5s;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.addItineraryBtn {
+  box-shadow: none;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  background: #4caf50;
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.08) !important;
+}
+
+.deleteItinerary,
+.removeItineraryBtn {
+  box-shadow: none;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  padding: 5px 7px;
+  background: red;
+  color: #fff;
+  font-size: 15px;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.08) !important;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+
+.alert {
+  position: fixed;
+  background: #986edb !important;
+  top: 10px;
+  right: 10px;
+  width: 400px;
+}
